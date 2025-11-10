@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmawrs Site!</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Site</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome!</h1>
-  <p id="url-display">Loading...</p>
-  <button id="go-btn" style="display:none">Go</button>
-
-  <script src="config.js"></script>
-  <script src="main.js"></script>
+    <iframe src="%TRUE_WEB%"></iframe>
 </body>
 </html>
