@@ -3,7 +3,7 @@ const goBtn = document.getElementById("go-btn");
 
 // SECRET_URL comes from config.js, injected by GitHub Actions
 if (typeof SECRET_URL === "undefined") {
-  urlDisplay.textContent = "Secret not available!";
+  urlDisplay.textContent = "Couldnt connect to Web!";
 } else {
   urlDisplay.textContent = "Click the button to continue.";
   goBtn.style.display = "inline-block";
