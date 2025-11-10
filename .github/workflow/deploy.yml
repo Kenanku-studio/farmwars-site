@@ -1,4 +1,4 @@
-name: Build and Deploy GitHub Pages
+name: Deploy Fullscreen Site
 
 on:
   push:
@@ -9,16 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Inject TRUE_WEB secret into config.js
-      - name: Create config.js with secret
+      - name: Replace secret in HTML
         run: |
-          echo "const SECRET_URL='${{ secrets.TRUE_WEB }}';" > site/config.js
+          sed -i "s|%TRUE_WEB%|${{ secrets.TRUE_WEB }}|g" index.html
 
-      # Deploy to GitHub Pages
-      - name: Deploy to Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./  # assuming index.html is in root
