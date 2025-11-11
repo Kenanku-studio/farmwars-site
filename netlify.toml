@@ -1,0 +1,3 @@
+[build]
+  publish = "dist"
+  command = "mkdir -p dist && sed 's|%TRUE_WEB%|${TRUE_WEB}|g' index.html.template > dist/index.html"
