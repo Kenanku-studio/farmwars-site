@@ -46,11 +46,10 @@
     const iframe = document.getElementById('site-frame');
     const errorMsg = document.getElementById('error-message');
 
-    // Timeout fallback (some sites block iframe, error won't trigger)
     const timeout = setTimeout(() => {
       iframe.style.display = 'none';
       errorMsg.style.display = 'flex';
-    }, 5000); // 5 seconds
+    }, 5000);
 
     iframe.onload = () => {
       clearTimeout(timeout);
